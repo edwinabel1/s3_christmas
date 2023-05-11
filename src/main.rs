@@ -18,22 +18,18 @@ fn main() {
         "twelve drummers drumming",
     ];
 
-    let mut index = 0;
-    for day in days {
+    for (index, day) in days.into_iter().enumerate() {
         print!("On the {} day of Christmas, my true love gave to me ", &day);
         for gift_i in (0..index + 1).rev() {
             if gift_i > 1 {
                 print!("{}, ", &gifts[gift_i]);
             } else if gift_i == 1 {
                 print!("{} ", &gifts[gift_i]);
+            } else if index != 0 {
+                println!("and {}.", &gifts[gift_i]);
             } else {
-                if index != 0 {
-                    println!("and {}.", &gifts[gift_i]);
-                } else {
-                    println!("{}.", &gifts[gift_i]);
-                }
+                println!("{}.", &gifts[gift_i]);
             }
         }
-        index += 1;
     }
 }
