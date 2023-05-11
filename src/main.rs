@@ -34,6 +34,6 @@ fn main() {
                 }
             }
         }
-        index = index + 1;
+        index += 1;
     }
 }
